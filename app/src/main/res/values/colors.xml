@@ -3,4 +3,16 @@
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
+
+    <color name="white">#FFFFFF</color>
+
+    <color name="background_tab_pressed">#6633B5E5</color>
+    <color name="tab_strip">#000000</color>
+    <color name="tab_textcolor">#FFFFFF</color>
+
+    <!-- Toolbar -->
+    <color name="cursorAccent">#FFFFFF</color>
+    <color name="controlNormal">#FFFFFF</color>
+    <color name="controlActivated">#FFFFFF</color>
+    <color name="color_fab">#9C27B0</color>
 </resources>

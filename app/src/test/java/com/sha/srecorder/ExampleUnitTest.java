@@ -1,4 +1,4 @@
-package com.sha.s_recorder;
+package com.sha.srecorder;
 
 import org.junit.Test;
 
