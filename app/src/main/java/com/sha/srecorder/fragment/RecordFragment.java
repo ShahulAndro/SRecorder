@@ -9,8 +9,9 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.Chronometer;
+import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,9 +22,19 @@ import androidx.fragment.app.Fragment;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.sha.srecorder.R;
+import com.sha.srecorder.database.AppDatabase;
+import com.sha.srecorder.database.RecordedItem;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.UUID;
+
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
+import io.reactivex.rxjava3.core.Observable;
+import io.reactivex.rxjava3.core.Observer;
+import io.reactivex.rxjava3.disposables.CompositeDisposable;
+import io.reactivex.rxjava3.disposables.Disposable;
+import io.reactivex.rxjava3.schedulers.Schedulers;
 
 /**
  * Created by Shahul Hameed Shaik on 02/12/2020.
@@ -44,10 +55,14 @@ public class RecordFragment extends Fragment {
     private FloatingActionButton mRecordButton = null;
     private FloatingActionButton mPauseButton = null;
     private TextView mRecordingPrompt;
+    private ProgressBar mProgressBar;
+    private RelativeLayout contentLayout;
 
     private Chronometer mChronometer = null;
 
     private MediaRecorder mediaRecorder;
+
+    private final CompositeDisposable disposables = new CompositeDisposable();
 
     public static RecordFragment newInstance(int position) {
         RecordFragment recordFragment = new RecordFragment();
@@ -67,6 +82,8 @@ public class RecordFragment extends Fragment {
         mRecordingPrompt = recordView.findViewById(R.id.recording_status_text);
         mRecordButton = recordView.findViewById(R.id.btnRecord);
         mPauseButton = recordView.findViewById(R.id.btnPause);
+        mProgressBar = recordView.findViewById(R.id.progressBar);
+        contentLayout = recordView.findViewById(R.id.contentLayout);
 
         mPauseButton.setVisibility(View.GONE);
 
@@ -90,6 +107,12 @@ public class RecordFragment extends Fragment {
         });
 
         return recordView;
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        disposables.clear();
     }
 
     private void checkPermissionAndStartRecording() {
@@ -177,7 +200,65 @@ public class RecordFragment extends Fragment {
         this.mPauseButton.setVisibility(View.GONE);
         this.mPauseButton.setImageResource(R.drawable.ic_media_pause);
 
-        //Todo: Save record into database
+        insertRecordedItem();
+    }
+
+    private void showProgress() {
+        this.mProgressBar.setVisibility(View.VISIBLE);
+        this.contentLayout.setVisibility(View.GONE);
+    }
+
+    private void hideProgress() {
+        this.mProgressBar.setVisibility(View.GONE);
+        this.contentLayout.setVisibility(View.VISIBLE);
+    }
+
+    private void insertRecordedItem() {
+        getObservable()
+                // Run on a background thread
+                .subscribeOn(Schedulers.io())
+                // Be notified on the main thread
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(getObserver());
+    }
+
+    private Observable<RecordedItem> getObservable()  {
+        return Observable.create(emitter -> {
+            if (!emitter.isDisposed()) {
+                RecordedItem recordedItem = new RecordedItem();
+                recordedItem.fileName = mFileName;
+                recordedItem.filePath = getContext().getFilesDir().getPath();
+                recordedItem.recordedLength = mElapsedMillis;
+                AppDatabase.getInstance(getContext()).recordedItemDao().insert(recordedItem);
+
+                List<RecordedItem> recordedItems = AppDatabase.getInstance(getContext()).recordedItemDao().getAll();
+
+                emitter.onNext(recordedItem);
+                emitter.onComplete();
+            }
+        });
+    }
+
+    private Observer<RecordedItem> getObserver()  {
+        Observer observer = new Observer<RecordedItem>() {
+            @Override
+            public void onSubscribe(@io.reactivex.rxjava3.annotations.NonNull Disposable d) {
+                showProgress();
+            }
+
+            @Override
+            public void onError(@io.reactivex.rxjava3.annotations.NonNull Throwable e) {}
+
+            @Override
+            public void onComplete() {}
+
+            @Override
+            public void onNext(@io.reactivex.rxjava3.annotations.NonNull RecordedItem s) {
+                hideProgress();
+
+            }
+        };
+        return observer;
     }
 
     private void pauseRecording() {

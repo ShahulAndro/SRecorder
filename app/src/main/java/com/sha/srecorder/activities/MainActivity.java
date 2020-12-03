@@ -1,14 +1,14 @@
 package com.sha.srecorder.activities;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
+import android.os.Bundle;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
 import androidx.viewpager.widget.ViewPager;
-
-import android.Manifest;
-import android.content.pm.PackageManager;
-import android.os.Bundle;
 
 import com.sha.srecorder.R;
 import com.sha.srecorder.adapter.ShaViewPagerAdapter;
