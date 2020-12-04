@@ -127,7 +127,7 @@ public class SavedRecordingAdapter extends RecyclerView.Adapter<SavedRecordingAd
     }
 
     public void newRecordedItemAdded(RecordedItem recordedItem) {
-        this.recordedItemList.add(recordedItem);
+        this.recordedItemList.add(0, recordedItem);
         notifyDataSetChanged();
     }
 

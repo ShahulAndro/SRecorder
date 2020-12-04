@@ -14,7 +14,7 @@ import java.util.List;
 
 @Dao
 public interface RecordedItemDao {
-    @Query("SELECT * FROM recorded_item")
+    @Query("SELECT * FROM recorded_item ORDER BY rid DESC")
     List<RecordedItem> getAll();
 
     @Query("SELECT * FROM recorded_item WHERE rid = :id")

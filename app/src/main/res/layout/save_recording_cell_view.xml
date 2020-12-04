@@ -48,7 +48,6 @@
                 android:layout_height="wrap_content"
                 android:text="file_name"
                 android:textSize="15sp"
-                android:fontFamily="sans-serif-condensed"
                 android:textStyle="bold"
                 android:singleLine="false"/>
 
