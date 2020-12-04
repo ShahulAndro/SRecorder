@@ -28,6 +28,7 @@ import com.sha.srecorder.database.RecordedItem;
 import com.sha.srecorder.viewmodels.RecordedItemViewModel;
 
 import java.io.IOException;
+import java.util.Calendar;
 import java.util.UUID;
 
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
@@ -132,7 +133,7 @@ public class RecordFragment extends Fragment {
         initRecording();
         this.isRecordingStarted = true;
         this.isRecordingPaused = false;
-        this.mPauseButton.setVisibility(View.VISIBLE);
+        this.mPauseButton.setVisibility(View.GONE);
 
         try {
             this.mStartingTimeMillis = System.currentTimeMillis();
@@ -161,7 +162,7 @@ public class RecordFragment extends Fragment {
         this.isRecordingStarted = true;
         this.isRecordingPaused = false;
 
-        this.mPauseButton.setVisibility(View.VISIBLE);
+        this.mPauseButton.setVisibility(View.GONE);
         this.mPauseButton.setImageResource(R.drawable.ic_media_pause);
 
         //Todo: Start Media Recording from pause
@@ -226,6 +227,7 @@ public class RecordFragment extends Fragment {
                 recordedItem.fileName = mFileName;
                 recordedItem.filePath = getContext().getFilesDir().getPath();
                 recordedItem.recordedLength = mElapsedMillis;
+                recordedItem.recordedTime = Calendar.getInstance().getTimeInMillis();
                 long rowID = AppDatabase.getInstance(getContext()).recordedItemDao().insert(recordedItem);
                 recordedItem.rid = (int) rowID;
 

@@ -78,6 +78,10 @@ public class SavedRecordingFragment extends Fragment implements OnSavedRecordedI
         this.mRecyclerView.setLayoutManager(llm);
         this.mRecyclerView.setItemAnimator(new DefaultItemAnimator());
 
+        this.savedRecordingAdapter = new SavedRecordingAdapter(getActivity());
+        this.savedRecordingAdapter.setOnItemClickListener(SavedRecordingFragment.this::onItemClick);
+        this.mRecyclerView.setAdapter(savedRecordingAdapter);
+
         getRecordedItems();
 
         return view;
@@ -88,8 +92,11 @@ public class SavedRecordingFragment extends Fragment implements OnSavedRecordedI
         super.onViewCreated(view, savedInstanceState);
 
         recordedItemViewModel = new ViewModelProvider(requireActivity()).get(RecordedItemViewModel.class);
-        recordedItemViewModel.getAddedDBRecordedItem().observe(getViewLifecycleOwner(), set -> {
-            savedRecordingAdapter.newRecordedItemAdded(set);
+        recordedItemViewModel.getAddedDBRecordedItem().observe(getViewLifecycleOwner(), recordedItem -> {
+            if (recordedItem != null) {
+                hideProgress();
+                savedRecordingAdapter.newRecordedItemAdded(recordedItem);
+            }
         });
     }
 
@@ -133,9 +140,7 @@ public class SavedRecordingFragment extends Fragment implements OnSavedRecordedI
     private Observable<List<RecordedItem>> getObservable()  {
         return Observable.create(emitter -> {
             if (!emitter.isDisposed()) {
-
                 List<RecordedItem> recordedItems = AppDatabase.getInstance(getContext()).recordedItemDao().getAll();
-
                 emitter.onNext(recordedItems);
                 emitter.onComplete();
             }
@@ -162,9 +167,7 @@ public class SavedRecordingFragment extends Fragment implements OnSavedRecordedI
                     showNoDataFound();
                 } else {
                     hideProgress();
-                    savedRecordingAdapter = new SavedRecordingAdapter(getActivity(), recordedItemList);
-                    savedRecordingAdapter.setOnItemClickListener(SavedRecordingFragment.this::onItemClick);
-                    mRecyclerView.setAdapter(savedRecordingAdapter);
+                    savedRecordingAdapter.setRecordedItemList(recordedItemList);
                 }
             }
         };

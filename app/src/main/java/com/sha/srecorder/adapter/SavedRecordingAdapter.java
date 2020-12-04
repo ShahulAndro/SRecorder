@@ -19,6 +19,9 @@ import com.sha.srecorder.listener.OnRenameDeleteDBChangedListener;
 import com.sha.srecorder.listener.OnSavedRecordedItemClickListener;
 import com.sha.srecorder.listener.SavedRecordingOverflowListener;
 
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -28,12 +31,11 @@ import java.util.concurrent.TimeUnit;
 public class SavedRecordingAdapter extends RecyclerView.Adapter<SavedRecordingAdapter.ViewHolder> implements OnRenameDeleteDBChangedListener {
 
     private Context context;
-    private List<RecordedItem> recordedItemList;
+    private List<RecordedItem> recordedItemList = new ArrayList<>();
     private OnSavedRecordedItemClickListener clickListener;
 
-    public SavedRecordingAdapter(Context context, List<RecordedItem> recordedItemList) {
+    public SavedRecordingAdapter(Context context) {
         this.context = context;
-        this.recordedItemList = recordedItemList;
     }
 
     // Create new views (invoked by the layout manager)
@@ -65,6 +67,8 @@ public class SavedRecordingAdapter extends RecyclerView.Adapter<SavedRecordingAd
                 recordedItem.recordedTime,
                 DateUtils.FORMAT_SHOW_DATE | DateUtils.FORMAT_NUMERIC_DATE | DateUtils.FORMAT_SHOW_TIME | DateUtils.FORMAT_SHOW_YEAR
         );
+
+//        String recordedDate = new SimpleDateFormat("MM/dd/yyyy").format(new Date(recordedItem.recordedTime));
 
         viewHolder.txtRecordedDate.setText(recordedDate);
         viewHolder.bindClickListener(this.clickListener, recordedItem);
@@ -128,6 +132,16 @@ public class SavedRecordingAdapter extends RecyclerView.Adapter<SavedRecordingAd
 
     public void newRecordedItemAdded(RecordedItem recordedItem) {
         this.recordedItemList.add(0, recordedItem);
+        notifyDataSetChanged();
+    }
+
+    public void setRecordedItemList(List<RecordedItem> recordedItemList) {
+        if (this.recordedItemList.size() > 0) {
+            this.recordedItemList.addAll(recordedItemList);
+        } else {
+            this.recordedItemList = recordedItemList;
+        }
+
         notifyDataSetChanged();
     }
 
