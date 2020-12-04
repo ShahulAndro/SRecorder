@@ -6,11 +6,11 @@
     android:layout_width="match_parent"
     android:layout_height="75dp"
     android:layout_gravity="top"
-    android:layout_margin="5dp"
+    android:layout_margin="8dp"
     android:foreground="?android:attr/selectableItemBackground"
     android:transitionName="open_mediaplayer"
-    card_view:cardCornerRadius="4dp"
-    card_view:cardElevation="3dp">
+    card_view:cardCornerRadius="8dp"
+    card_view:cardElevation="8dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -22,9 +22,10 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_fileviewer"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_circle_play_light_blue"
+            android:scaleType="fitXY"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -71,16 +72,17 @@
 
         <TextView
             android:id="@+id/textViewOptions"
-            android:layout_width="wrap_content"
+            android:layout_width="50dp"
             android:layout_height="match_parent"
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
             android:text="&#8942;"
-            android:textAppearance="?android:textAppearanceLarge"
+            android:textSize="24sp"
+            android:textStyle="bold"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            android:gravity="top"
+            android:gravity="center"
             android:paddingLeft="8dp"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

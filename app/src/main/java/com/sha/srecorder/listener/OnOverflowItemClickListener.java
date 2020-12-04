@@ -9,6 +9,7 @@ import com.sha.srecorder.database.RecordedItem;
  */
 public interface OnOverflowItemClickListener {
     void onPlay(Context context, RecordedItem recordedItem);
-    void onRename(RecordedItem recordedItem);
-    void onDelete(RecordedItem recordedItem);
+    void onShare(OnRenameDeleteDBChangedListener adapterListener, RecordedItem recordedItem);
+    void onRename(OnRenameDeleteDBChangedListener adapterListener, RecordedItem recordedItem, final int position);
+    void onDelete(OnRenameDeleteDBChangedListener adapterListener, RecordedItem recordedItem,final int position);
 }

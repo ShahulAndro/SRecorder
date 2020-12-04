@@ -17,12 +17,15 @@ public interface RecordedItemDao {
     @Query("SELECT * FROM recorded_item")
     List<RecordedItem> getAll();
 
+    @Query("SELECT * FROM recorded_item WHERE rid = :id")
+    RecordedItem findByRecordedItemId(long id);
+
     @Insert
-    void insert(RecordedItem ... recordedItems);
+    long insert(RecordedItem recordedItem);
 
     @Update
-    void update(RecordedItem ... recordedItems);
+    int update(RecordedItem recordedItem);
 
     @Delete
-    void delete(RecordedItem recordedItem);
+    int delete(RecordedItem recordedItem);
 }

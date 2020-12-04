@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,7 +19,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.sha.srecorder.R;
 import com.sha.srecorder.database.RecordedItem;
 
@@ -37,7 +37,7 @@ public class PlaybackFragment extends DialogFragment {
     private long seconds = 0;
 
     private SeekBar mSeekBar = null;
-    private FloatingActionButton mPlayButton = null;
+    private ImageView mPlayButton = null;
     private TextView mCurrentProgressTextView = null;
     private TextView mFileNameTextView = null;
     private TextView mFileLengthTextView = null;
@@ -203,15 +203,14 @@ public class PlaybackFragment extends DialogFragment {
     }
 
     private void startPlaying() {
-        mPlayButton.setImageResource(R.drawable.ic_media_pause);
+        mPlayButton.setImageResource(R.drawable.ic_circle_pause_light_blue);
         mMediaPlayer = new MediaPlayer();
         try {
             mMediaPlayer.setDataSource(recordedItem.fileName);
-            mMediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                @Override
-                public void onCompletion(MediaPlayer mediaPlayer) {
-                    //stopPlaying();
-                }
+            mMediaPlayer.setOnCompletionListener(mediaPlayer -> {
+                //stopPlaying();
+                mPlayButton.setImageResource(R.drawable.ic_circle_replay_light_blue);
+                isPlaying = false;
             });
             mMediaPlayer.prepare();
             mSeekBar.setMax(mMediaPlayer.getDuration());
@@ -224,20 +223,20 @@ public class PlaybackFragment extends DialogFragment {
     }
 
     private void pausePlaying() {
-        mPlayButton.setImageResource(R.drawable.ic_media_play);
+        mPlayButton.setImageResource(R.drawable.ic_circle_play_light_blue);
         mHandler.removeCallbacks(mRunnable);
         mMediaPlayer.pause();
     }
 
     private void resumePlaying() {
-        mPlayButton.setImageResource(R.drawable.ic_media_pause);
+        mPlayButton.setImageResource(R.drawable.ic_circle_pause_light_blue);
         mHandler.removeCallbacks(mRunnable);
         mMediaPlayer.start();
         updateSeekBar();
     }
 
     private void stopPlaying() {
-        mPlayButton.setImageResource(R.drawable.ic_media_play);
+        mPlayButton.setImageResource(R.drawable.ic_circle_play_light_blue);
         mHandler.removeCallbacks(mRunnable);
         if (mMediaPlayer != null) {
             mMediaPlayer.release();

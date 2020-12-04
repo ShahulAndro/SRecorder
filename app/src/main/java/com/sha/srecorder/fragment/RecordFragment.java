@@ -19,20 +19,20 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.sha.srecorder.R;
 import com.sha.srecorder.database.AppDatabase;
 import com.sha.srecorder.database.RecordedItem;
+import com.sha.srecorder.viewmodels.RecordedItemViewModel;
 
 import java.io.IOException;
-import java.util.List;
 import java.util.UUID;
 
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import io.reactivex.rxjava3.core.Observable;
 import io.reactivex.rxjava3.core.Observer;
-import io.reactivex.rxjava3.disposables.CompositeDisposable;
 import io.reactivex.rxjava3.disposables.Disposable;
 import io.reactivex.rxjava3.schedulers.Schedulers;
 
@@ -62,7 +62,7 @@ public class RecordFragment extends Fragment {
 
     private MediaRecorder mediaRecorder;
 
-    private final CompositeDisposable disposables = new CompositeDisposable();
+    private RecordedItemViewModel recordedItemViewModel;
 
     public static RecordFragment newInstance(int position) {
         RecordFragment recordFragment = new RecordFragment();
@@ -87,32 +87,29 @@ public class RecordFragment extends Fragment {
 
         mPauseButton.setVisibility(View.GONE);
 
-        mRecordButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (RecordFragment.this.isRecordingStarted) {
-                    stopRecording();
-                } else {
-                    checkPermissionAndStartRecording();
-                }
-
+        mRecordButton.setOnClickListener(v -> {
+            if (RecordFragment.this.isRecordingStarted) {
+                stopRecording();
+            } else {
+                checkPermissionAndStartRecording();
             }
+
         });
 
-        mPauseButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                pauseRecording();
-            }
-        });
+        mPauseButton.setOnClickListener(v -> pauseRecording());
 
         return recordView;
     }
 
     @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        recordedItemViewModel = new ViewModelProvider(requireActivity()).get(RecordedItemViewModel.class);
+    }
+
+    @Override
     public void onDestroy() {
         super.onDestroy();
-        disposables.clear();
     }
 
     private void checkPermissionAndStartRecording() {
@@ -125,7 +122,7 @@ public class RecordFragment extends Fragment {
 
     private void initRecording() {
         String uuid = UUID.randomUUID().toString();
-        this.mFileName = getContext().getFilesDir().getPath() + "/" + uuid + ".3gp";
+        this.mFileName = getContext().getFilesDir().getPath() + "/" + uuid + ".mp4";
         Log.i(RecordFragment.class.getSimpleName(), mFileName);
 
         this.mediaRecorder = new MediaRecorder();
@@ -229,11 +226,11 @@ public class RecordFragment extends Fragment {
                 recordedItem.fileName = mFileName;
                 recordedItem.filePath = getContext().getFilesDir().getPath();
                 recordedItem.recordedLength = mElapsedMillis;
-                AppDatabase.getInstance(getContext()).recordedItemDao().insert(recordedItem);
+                long rowID = AppDatabase.getInstance(getContext()).recordedItemDao().insert(recordedItem);
+                recordedItem.rid = (int) rowID;
 
-                List<RecordedItem> recordedItems = AppDatabase.getInstance(getContext()).recordedItemDao().getAll();
-
-                emitter.onNext(recordedItem);
+                RecordedItem insertedRecord = AppDatabase.getInstance(getContext()).recordedItemDao().findByRecordedItemId(rowID);
+                emitter.onNext(insertedRecord);
                 emitter.onComplete();
             }
         });
@@ -253,9 +250,9 @@ public class RecordFragment extends Fragment {
             public void onComplete() {}
 
             @Override
-            public void onNext(@io.reactivex.rxjava3.annotations.NonNull RecordedItem s) {
+            public void onNext(@io.reactivex.rxjava3.annotations.NonNull RecordedItem recordedItem) {
                 hideProgress();
-
+                recordedItemViewModel.insertedRecordedItem(recordedItem);
             }
         };
         return observer;

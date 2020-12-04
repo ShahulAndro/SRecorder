@@ -9,11 +9,14 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.widget.PopupMenu;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.sha.srecorder.R;
 import com.sha.srecorder.database.RecordedItem;
 import com.sha.srecorder.listener.OnOverflowItemClickListener;
+import com.sha.srecorder.listener.OnRenameDeleteDBChangedListener;
+import com.sha.srecorder.listener.OnSavedRecordedItemClickListener;
 import com.sha.srecorder.listener.SavedRecordingOverflowListener;
 
 import java.util.List;
@@ -22,11 +25,11 @@ import java.util.concurrent.TimeUnit;
 /**
  * Created by Shahul Hameed Shaik on 03/12/2020.
  */
-public class SavedRecordingAdapter extends RecyclerView.Adapter<SavedRecordingAdapter.ViewHolder> {
+public class SavedRecordingAdapter extends RecyclerView.Adapter<SavedRecordingAdapter.ViewHolder> implements OnRenameDeleteDBChangedListener {
 
     private Context context;
     private List<RecordedItem> recordedItemList;
-
+    private OnSavedRecordedItemClickListener clickListener;
 
     public SavedRecordingAdapter(Context context, List<RecordedItem> recordedItemList) {
         this.context = context;
@@ -46,7 +49,6 @@ public class SavedRecordingAdapter extends RecyclerView.Adapter<SavedRecordingAd
     // Replace the contents of a view (invoked by the layout manager)
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, final int position) {
-
         // Get element from your dataset at this position and replace the
         // contents of the view with that element
         RecordedItem recordedItem = this.recordedItemList.get(position);
@@ -65,6 +67,7 @@ public class SavedRecordingAdapter extends RecyclerView.Adapter<SavedRecordingAd
         );
 
         viewHolder.txtRecordedDate.setText(recordedDate);
+        viewHolder.bindClickListener(this.clickListener, recordedItem);
 
         viewHolder.textViewOptions.setOnClickListener(view -> {
             //creating a popup menu
@@ -76,15 +79,19 @@ public class SavedRecordingAdapter extends RecyclerView.Adapter<SavedRecordingAd
                 switch (item.getItemId()) {
                     case R.id.play:
                         //handle play click
-                        viewHolder.onOverflowItemClickListener.onPlay(context, this.recordedItemList.get(position));
+                        viewHolder.onOverflowItemClickListener.onPlay(this.context, this.recordedItemList.get(position));
+                        break;
+                    case R.id.share:
+                        //handle rename click
+                        viewHolder.onOverflowItemClickListener.onShare(this, this.recordedItemList.get(position));
                         break;
                     case R.id.rename:
                         //handle rename click
-                        viewHolder.onOverflowItemClickListener.onRename(this.recordedItemList.get(position));
+                        viewHolder.onOverflowItemClickListener.onRename(this, this.recordedItemList.get(position), position);
                         break;
                     case R.id.delete:
                         //handle delete click
-                        viewHolder.onOverflowItemClickListener.onDelete(this.recordedItemList.get(position));
+                        viewHolder.onOverflowItemClickListener.onDelete(this, this.recordedItemList.get(position), position);
                         break;
                 }
                 return false;
@@ -103,12 +110,38 @@ public class SavedRecordingAdapter extends RecyclerView.Adapter<SavedRecordingAd
         return this.recordedItemList.size();
     }
 
+    @Override
+    public void onRenameRecordedItem(int position) {
+        notifyItemChanged(position);
+    }
+
+    @Override
+    public void onDeleteRecordedItem(int position) {
+        this.recordedItemList.remove(position);
+        notifyDataSetChanged();
+    }
+
+    @Override
+    public Context getContext() {
+        return this.context;
+    }
+
+    public void newRecordedItemAdded(RecordedItem recordedItem) {
+        this.recordedItemList.add(recordedItem);
+        notifyDataSetChanged();
+    }
+
     private String getFormatFileName(String rawFileName) {
         return rawFileName.substring(rawFileName.lastIndexOf("/") + 1);
     }
 
+    public void setOnItemClickListener(OnSavedRecordedItemClickListener clickListener) {
+        this.clickListener = clickListener;
+    }
+
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        ImageView imgRecorder;
+        CardView cardView;
+        ImageView imageView;
         TextView txtFileName;
         TextView txtFileLength;
         TextView txtRecordedDate;
@@ -117,12 +150,17 @@ public class SavedRecordingAdapter extends RecyclerView.Adapter<SavedRecordingAd
 
         public ViewHolder(View view) {
             super(view);
-            imgRecorder = view.findViewById(R.id.imageView);
+            cardView = view.findViewById(R.id.card_view);
+            imageView = view.findViewById(R.id.imageView);
             txtFileName = view.findViewById(R.id.file_name_text);
             txtFileLength = view.findViewById(R.id.file_length_text);
             txtRecordedDate =  view.findViewById(R.id.file_date_added_text);
             textViewOptions =  view.findViewById(R.id.textViewOptions);
             onOverflowItemClickListener = new SavedRecordingOverflowListener();
+        }
+
+        public void bindClickListener(OnSavedRecordedItemClickListener onSavedRecordedItemClickListener, RecordedItem recordedItem) {
+            cardView.setOnClickListener(v -> onSavedRecordedItemClickListener.onItemClick(recordedItem));
         }
     }
 }

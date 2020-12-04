@@ -4,6 +4,9 @@
         android:id="@+id/play"
         android:title="Play" />
     <item
+        android:id="@+id/share"
+        android:title="Share" />
+    <item
         android:id="@+id/rename"
         android:title="Rename" />
     <item

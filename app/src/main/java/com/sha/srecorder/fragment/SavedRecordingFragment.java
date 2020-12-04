@@ -7,8 +7,12 @@ import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -17,6 +21,8 @@ import com.sha.srecorder.R;
 import com.sha.srecorder.adapter.SavedRecordingAdapter;
 import com.sha.srecorder.database.AppDatabase;
 import com.sha.srecorder.database.RecordedItem;
+import com.sha.srecorder.listener.OnSavedRecordedItemClickListener;
+import com.sha.srecorder.viewmodels.RecordedItemViewModel;
 
 import java.util.List;
 
@@ -29,7 +35,7 @@ import io.reactivex.rxjava3.schedulers.Schedulers;
 /**
  * Created by Shahul Hameed Shaik on 02/12/2020.
  */
-public class SavedRecordingFragment extends Fragment {
+public class SavedRecordingFragment extends Fragment implements OnSavedRecordedItemClickListener {
 
     private static final String POSITION = "position";
 
@@ -39,6 +45,7 @@ public class SavedRecordingFragment extends Fragment {
     private RecyclerView mRecyclerView;
 
     private SavedRecordingAdapter savedRecordingAdapter;
+    private RecordedItemViewModel recordedItemViewModel;
 
     public static SavedRecordingFragment newInstance(int position) {
         SavedRecordingFragment savedRecordingFragment = new SavedRecordingFragment();
@@ -74,6 +81,26 @@ public class SavedRecordingFragment extends Fragment {
         getRecordedItems();
 
         return view;
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        recordedItemViewModel = new ViewModelProvider(requireActivity()).get(RecordedItemViewModel.class);
+        recordedItemViewModel.getAddedDBRecordedItem().observe(getViewLifecycleOwner(), set -> {
+            savedRecordingAdapter.newRecordedItemAdded(set);
+        });
+    }
+
+    @Override
+    public void onItemClick(RecordedItem recordedItem) {
+        FragmentTransaction transaction = ((FragmentActivity) getContext())
+                .getSupportFragmentManager()
+                .beginTransaction();
+
+        PlaybackFragment playbackFragment = new PlaybackFragment().newInstance(recordedItem);
+        playbackFragment.show(transaction, "playback_fragment");
     }
 
     private void showProgress() {
@@ -136,6 +163,7 @@ public class SavedRecordingFragment extends Fragment {
                 } else {
                     hideProgress();
                     savedRecordingAdapter = new SavedRecordingAdapter(getActivity(), recordedItemList);
+                    savedRecordingAdapter.setOnItemClickListener(SavedRecordingFragment.this::onItemClick);
                     mRecyclerView.setAdapter(savedRecordingAdapter);
                 }
             }

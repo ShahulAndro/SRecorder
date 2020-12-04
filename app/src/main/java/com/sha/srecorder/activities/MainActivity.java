@@ -20,7 +20,7 @@ import com.sha.srecorder.views.ShaViewPagerSlider;
 
 public class MainActivity extends AppCompatActivity {
     private static final int REQUEST_RECORD_AUDIO_PERMISSION = 100;
-    private static final String[] permissions = {Manifest.permission.RECORD_AUDIO};
+    private static final String[] permissions = {Manifest.permission.RECORD_AUDIO, Manifest.permission.WRITE_EXTERNAL_STORAGE};
     private boolean audioRecordingPermissionGranted = false;
 
     private ShaViewPagerSlider tabs;
