@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SRecorder</string>
+    <string name="record">ჩანაწერი</string>
+    <string name="saved_recordings">შენახული ჩანაწერები</string>
+    <string name="toast_recording_start">ჩაწერა დაიწყო</string>
+    <string name="toast_recording_finish">ჩაწერა შენახულია აქ</string>
+    <string name="notification_recording">ჩაწერა ...</string>
+    <string name="dialog_title_delete">დაადასტურეთ წაშლა ...</string>
+    <string name="dialog_text_delete">დარწმუნებული ხართ, რომ გსურთ ამ ფაილის წაშლა?</string>
+    <string name="dialog_title_rename">ფაილის გადარქმევა</string>
+    <string name="overflow_file_share">გაზიარება</string>
+    <string name="overflow_file_rename">გადარქმევა</string>
+    <string name="overflow_file_delete">წაშლა</string>
+    <string name="dialog_action_cancel">გაუქმება</string>
+    <string name="dialog_action_ok">კარგი</string>
+    <string name="dialog_action_yes">დიახ</string>
+    <string name="dialog_action_no">არა</string>
+    <string name="no_saved_recordings_message">შენახული ჩანაწერები არ არის</string>
+    <string name="pause_recording_button">პაუზა</string>
+    <string name="resume_recording_button">Გაგრძელება</string>
+    <string name="default_file_name">ჩემი ჩაწერა</string>
+    <string name="record_prompt">შეეხეთ ღილაკს ჩაწერის დასაწყებად</string>
+    <string name="record_in_progress">ჩაწერა</string>
+    <string name="send_to">Გაგზავნა</string>
+    <string name="overflow_file_play">ითამაშეთ</string>
+</resources>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SRecorder</string>
+    <string name="record">பதிவு</string>
+    <string name="saved_recordings">பதிவுகள் சேமிக்கப்பட்டன</string>
+    <string name="toast_recording_start">பதிவு தொடங்கியது</string>
+    <string name="toast_recording_finish">பதிவுசெய்தல் சேமிக்கப்பட்டது</string>
+    <string name="notification_recording">பதிவு...</string>
+    <string name="dialog_title_delete">நீக்கு என்பதை உறுதிப்படுத்தவும் ...</string>
+    <string name="dialog_text_delete">இந்த கோப்பை நீக்க விரும்புகிறீர்களா?</string>
+    <string name="dialog_title_rename">கோப்பை மறுபெயரிடுங்கள்</string>
+    <string name="overflow_file_share">பகிர்</string>
+    <string name="overflow_file_rename">மறுபெயரிடு</string>
+    <string name="overflow_file_delete">அழி</string>
+    <string name="dialog_action_cancel">ரத்துசெய்</string>
+    <string name="dialog_action_ok">சரி</string>
+    <string name="dialog_action_yes">ஆம்</string>
+    <string name="dialog_action_no">இல்லை</string>
+    <string name="no_saved_recordings_message">சேமித்த பதிவுகள் இல்லை</string>
+    <string name="pause_recording_button">இடைநிறுத்தம்</string>
+    <string name="resume_recording_button">தற்குறிப்பு</string>
+    <string name="default_file_name">எனது பதிவு</string>
+    <string name="record_prompt">பதிவைத் தொடங்க பொத்தானைத் தட்டவும்</string>
+    <string name="record_in_progress">பதிவு</string>
+    <string name="send_to">அனுப்புங்கள்</string>
+    <string name="overflow_file_play">விளையாடு</string>
+</resources>

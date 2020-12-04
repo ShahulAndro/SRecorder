@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SRecorder</string>
+    <string name="record">Գրառում</string>
+    <string name="saved_recordings">Պահված ձայնագրությունները</string>
+    <string name="toast_recording_start">Ձայնագրումը սկսվեց</string>
+    <string name="toast_recording_finish">Ձայնագրումը պահված է</string>
+    <string name="notification_recording">Ձայնագրությունը...</string>
+    <string name="dialog_title_delete">Հաստատել Deleteնջել ...</string>
+    <string name="dialog_text_delete">Վստա՞հ եք, որ ցանկանում եք ջնջել այս ֆայլը:</string>
+    <string name="dialog_title_rename">Վերանվանել ֆայլը</string>
+    <string name="overflow_file_share">Կիսվել</string>
+    <string name="overflow_file_rename">Վերանվանել</string>
+    <string name="overflow_file_delete">Նջել</string>
+    <string name="dialog_action_cancel">Չեղարկել</string>
+    <string name="dialog_action_ok">լավ</string>
+    <string name="dialog_action_yes">Այո</string>
+    <string name="dialog_action_no">Ոչ</string>
+    <string name="no_saved_recordings_message">Պահված ձայնագրություններ չկան</string>
+    <string name="pause_recording_button">Դադար</string>
+    <string name="resume_recording_button">Ռեզյումե</string>
+    <string name="default_file_name">Իմ ձայնագրությունը</string>
+    <string name="record_prompt">Հպեք կոճակին ՝ ձայնագրությունն սկսելու համար</string>
+    <string name="record_in_progress">Ձայնագրությունը</string>
+    <string name="send_to">Ուղարկել</string>
+    <string name="overflow_file_play">Խաղալ</string>
+</resources>

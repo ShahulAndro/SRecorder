@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.net.Uri;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
@@ -82,7 +81,7 @@ public class SavedRecordingOverflowListener implements OnOverflowItemClickListen
         LayoutInflater inflater = LayoutInflater.from(adapterListener.getContext());
         View view = inflater.inflate(R.layout.dialog_rename, null);
 
-        final EditText input = (EditText) view.findViewById(R.id.new_name);
+        final EditText input = (EditText) view.findViewById(R.id.newName);
 
         builder.setTitle(adapterListener.getContext().getString(R.string.dialog_title_rename));
         builder.setCancelable(true);
@@ -92,7 +91,7 @@ public class SavedRecordingOverflowListener implements OnOverflowItemClickListen
                         String newFileName = input.getText().toString().trim() + ".mp4";
                         renameRecordedItem(adapterListener, recordedItem, newFileName, position);
                     } catch (Exception e) {
-                        Log.e(SavedRecordingOverflowListener.class.getName(), "exception", e);
+                        Toast.makeText(adapterListener.getContext(), "OOPs something wrong, please try again", Toast.LENGTH_LONG).show();
                     }
 
                     dialog.cancel();
@@ -177,7 +176,6 @@ public class SavedRecordingOverflowListener implements OnOverflowItemClickListen
                         }
                     } catch (Exception ex) {
                         emitter.onNext(-1);
-                        Log.e(SavedRecordingOverflowListener.class.getName(), Log.getStackTraceString(ex));
                     }
                 }
 

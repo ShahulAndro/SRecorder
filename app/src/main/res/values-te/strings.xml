@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SRecorder</string>
+    <string name="record">రికార్డ్</string>
+    <string name="saved_recordings">సేవ్ చేసిన రికార్డింగ్‌లు</string>
+    <string name="toast_recording_start">రికార్డింగ్ ప్రారంభమైంది</string>
+    <string name="toast_recording_finish">రికార్డింగ్ సేవ్ చేయబడింది</string>
+    <string name="notification_recording">రికార్డింగ్ ...</string>
+    <string name="dialog_title_delete">తొలగించును నిర్ధారించండి ...</string>
+    <string name="dialog_text_delete">మీరు ఖచ్చితంగా ఈ ఫైల్‌ను తొలగించాలనుకుంటున్నారా?</string>
+    <string name="dialog_title_rename">ఫైల్ పేరు మార్చండి</string>
+    <string name="overflow_file_share">భాగస్వామ్యం చేయండి</string>
+    <string name="overflow_file_rename">పేరు మార్చండి</string>
+    <string name="overflow_file_delete">తొలగించు</string>
+    <string name="dialog_action_cancel">రద్దు చేయండి</string>
+    <string name="dialog_action_ok">అలాగే</string>
+    <string name="dialog_action_yes">అవును</string>
+    <string name="dialog_action_no">లేదు</string>
+    <string name="no_saved_recordings_message">సేవ్ చేసిన రికార్డింగ్‌లు లేవు</string>
+    <string name="pause_recording_button">పాజ్ చేయండి</string>
+    <string name="resume_recording_button">పునఃప్రారంభం</string>
+    <string name="default_file_name">నా రికార్డింగ్</string>
+    <string name="record_prompt">రికార్డింగ్ ప్రారంభించడానికి బటన్ నొక్కండి</string>
+    <string name="record_in_progress">రికార్డింగ్</string>
+    <string name="send_to">పంపే</string>
+    <string name="overflow_file_play">ప్లే</string>
+</resources>

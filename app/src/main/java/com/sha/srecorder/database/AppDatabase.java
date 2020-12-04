@@ -9,7 +9,7 @@ import androidx.room.RoomDatabase;
 /**
  * Created by Shahul Hameed Shaik on 02/12/2020.
  */
-@Database(entities = {RecordedItem.class}, version = 1)
+@Database(entities = {RecordedItem.class}, version = 1, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
     private static final String DBNAME = "srecorder_db";
 

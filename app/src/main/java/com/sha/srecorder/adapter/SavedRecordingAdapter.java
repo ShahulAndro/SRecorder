@@ -19,9 +19,7 @@ import com.sha.srecorder.listener.OnRenameDeleteDBChangedListener;
 import com.sha.srecorder.listener.OnSavedRecordedItemClickListener;
 import com.sha.srecorder.listener.SavedRecordingOverflowListener;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -166,9 +164,9 @@ public class SavedRecordingAdapter extends RecyclerView.Adapter<SavedRecordingAd
             super(view);
             cardView = view.findViewById(R.id.card_view);
             imageView = view.findViewById(R.id.imageView);
-            txtFileName = view.findViewById(R.id.file_name_text);
-            txtFileLength = view.findViewById(R.id.file_length_text);
-            txtRecordedDate =  view.findViewById(R.id.file_date_added_text);
+            txtFileName = view.findViewById(R.id.txtFileName);
+            txtFileLength = view.findViewById(R.id.txtFileLength);
+            txtRecordedDate =  view.findViewById(R.id.txtFileDateAdded);
             textViewOptions =  view.findViewById(R.id.textViewOptions);
             onOverflowItemClickListener = new SavedRecordingOverflowListener();
         }

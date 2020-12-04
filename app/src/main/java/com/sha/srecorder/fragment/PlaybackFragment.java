@@ -77,9 +77,9 @@ public class PlaybackFragment extends DialogFragment {
 
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        mFileNameTextView = view.findViewById(R.id.file_name_text_view);
-        mFileLengthTextView = view.findViewById(R.id.file_length_text_view);
-        mCurrentProgressTextView = view.findViewById(R.id.current_progress_text_view);
+        mFileNameTextView = view.findViewById(R.id.txtFileName);
+        mFileLengthTextView = view.findViewById(R.id.txtFileLength);
+        mCurrentProgressTextView = view.findViewById(R.id.txtCurrentProgress);
 
         mSeekBar = view.findViewById(R.id.seekbar);
         ColorFilter filter = new LightingColorFilter
@@ -129,7 +129,7 @@ public class PlaybackFragment extends DialogFragment {
             }
         });
 
-        mPlayButton = view.findViewById(R.id.fab_play);
+        mPlayButton = view.findViewById(R.id.playBackControl);
         mPlayButton.setOnClickListener(v -> {
             onPlay(isPlaying);
             isPlaying = !isPlaying;

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SRecorder</string>
+    <string name="record">기록</string>
+    <string name="saved_recordings">저장된 녹음</string>
+    <string name="toast_recording_start">녹화 시작</string>
+    <string name="toast_recording_finish">녹음이 저장되었습니다.</string>
+    <string name="notification_recording">녹음...</string>
+    <string name="dialog_title_delete">삭제 확인 ...</string>
+    <string name="dialog_text_delete">이 파일을 삭제 하시겠습니까?</string>
+    <string name="dialog_title_rename">파일명 변경</string>
+    <string name="overflow_file_share">공유</string>
+    <string name="overflow_file_rename">이름 바꾸기</string>
+    <string name="overflow_file_delete">지우다</string>
+    <string name="dialog_action_cancel">취소</string>
+    <string name="dialog_action_ok">확인</string>
+    <string name="dialog_action_yes">예</string>
+    <string name="dialog_action_no">아니</string>
+    <string name="no_saved_recordings_message">저장된 녹음이 없습니다.</string>
+    <string name="pause_recording_button">중지</string>
+    <string name="resume_recording_button">이력서</string>
+    <string name="default_file_name">내 녹음</string>
+    <string name="record_prompt">녹음을 시작하려면 버튼을 탭하세요</string>
+    <string name="record_in_progress">녹음</string>
+    <string name="send_to">보내기</string>
+    <string name="overflow_file_play">플레이</string>
+</resources>

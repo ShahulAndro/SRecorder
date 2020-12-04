@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SRecorder</string>
+    <string name="record">Grabar</string>
+    <string name="saved_recordings">Grabaciones guardadas</string>
+    <string name="toast_recording_start">Se inició la grabación</string>
+    <string name="toast_recording_finish">Grabación guardada en</string>
+    <string name="notification_recording">Grabación...</string>
+    <string name="dialog_title_delete">Confirmar eliminación...</string>
+    <string name="dialog_text_delete">¿Está seguro de que desea eliminar este archivo?</string>
+    <string name="dialog_title_rename">Renombrar archivo</string>
+    <string name="overflow_file_share">Compartir</string>
+    <string name="overflow_file_rename">Rebautizar</string>
+    <string name="overflow_file_delete">Eliminar</string>
+    <string name="dialog_action_cancel">Cancelar</string>
+    <string name="dialog_action_ok">Okay</string>
+    <string name="dialog_action_yes">si</string>
+    <string name="dialog_action_no">No</string>
+    <string name="no_saved_recordings_message">No hay grabaciones guardadas</string>
+    <string name="pause_recording_button">Pausa</string>
+    <string name="resume_recording_button">Resume</string>
+    <string name="default_file_name">Mi grabación</string>
+    <string name="record_prompt">Toque el botón para comenzar a grabar</string>
+    <string name="record_in_progress">Grabación</string>
+    <string name="send_to">Enviar a</string>
+    <string name="overflow_file_play">Tocar</string>
+</resources>

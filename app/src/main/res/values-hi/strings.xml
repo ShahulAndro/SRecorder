@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SRecorder</string>
+    <string name="record">अभिलेख</string>
+    <string name="saved_recordings">बची हुई रिकॉर्डिंग</string>
+    <string name="toast_recording_start">रिकॉर्डिंग शुरू हो गई</string>
+    <string name="toast_recording_finish">रिकॉर्डिंग को सहेजा गया</string>
+    <string name="notification_recording">रिकॉर्डिंग ...</string>
+    <string name="dialog_title_delete">हटाने की पुष्टि करें...</string>
+    <string name="dialog_text_delete">क्या आप वाकई इस फ़ाइल को हटाना चाहते हैं?</string>
+    <string name="dialog_title_rename">फाइल का नाम बदलो</string>
+    <string name="overflow_file_share">शेयर</string>
+    <string name="overflow_file_rename">नाम बदलें</string>
+    <string name="overflow_file_delete">हटाएं</string>
+    <string name="dialog_action_cancel">रद्द करना</string>
+    <string name="dialog_action_ok">ठीक है</string>
+    <string name="dialog_action_yes">हाँ</string>
+    <string name="dialog_action_no">नहीं</string>
+    <string name="no_saved_recordings_message">कोई सहेजी गई रिकॉर्डिंग नहीं</string>
+    <string name="pause_recording_button">ठहराव</string>
+    <string name="resume_recording_button">बायोडाटा</string>
+    <string name="default_file_name">मेरी रिकॉर्डिंग</string>
+    <string name="record_prompt">रिकॉर्डिंग शुरू करने के लिए बटन पर टैप करें</string>
+    <string name="record_in_progress">रिकॉर्डिंग</string>
+    <string name="send_to">भेजना</string>
+    <string name="overflow_file_play">खेल</string>
+</resources>

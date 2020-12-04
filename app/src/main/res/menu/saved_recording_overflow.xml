@@ -2,15 +2,15 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/play"
-        android:title="Play" />
+        android:title="@string/overflow_file_play" />
     <item
         android:id="@+id/share"
-        android:title="Share"
+        android:title="@string/overflow_file_share"
         android:visible="false"/>
     <item
         android:id="@+id/rename"
-        android:title="Rename" />
+        android:title="@string/overflow_file_rename" />
     <item
         android:id="@+id/delete"
-        android:title="Delete"/>
+        android:title="@string/overflow_file_delete"/>
 </menu>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SRecorder</string>
+    <string name="record">תקליט</string>
+    <string name="saved_recordings">הקלטות שמורות</string>
+    <string name="toast_recording_start">ההקלטה התחילה</string>
+    <string name="toast_recording_finish">ההקלטה נשמרה ב</string>
+    <string name="notification_recording">הקלטה...</string>
+    <string name="dialog_title_delete">אשר מחיקה ...</string>
+    <string name="dialog_text_delete">האם אתה בטוח שברצונך למחוק קובץ זה?</string>
+    <string name="dialog_title_rename">שנה את שם הקובץ</string>
+    <string name="overflow_file_share">לַחֲלוֹק</string>
+    <string name="overflow_file_rename">שנה שם</string>
+    <string name="overflow_file_delete">לִמְחוֹק</string>
+    <string name="dialog_action_cancel">לְבַטֵל</string>
+    <string name="dialog_action_ok">בסדר</string>
+    <string name="dialog_action_yes">כן</string>
+    <string name="dialog_action_no">לא</string>
+    <string name="no_saved_recordings_message">אין הקלטות שמורות</string>
+    <string name="pause_recording_button">הַפסָקָה</string>
+    <string name="resume_recording_button">קורות חיים</string>
+    <string name="default_file_name">ההקלטה שלי</string>
+    <string name="record_prompt">הקש על הלחצן כדי להתחיל בהקלטה</string>
+    <string name="record_in_progress">הקלטה</string>
+    <string name="send_to">לשלוח ל</string>
+    <string name="overflow_file_play">לְשַׂחֵק</string>
+</resources>

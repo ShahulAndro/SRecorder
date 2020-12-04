@@ -6,13 +6,13 @@
 
     <color name="white">#FFFFFF</color>
 
-    <color name="background_tab_pressed">#6633B5E5</color>
-    <color name="tab_strip">#FFFFFF</color>
-    <color name="tab_textcolor">#FFFFFF</color>
+    <color name="backgroundTabPressed">#6633B5E5</color>
+    <color name="tabStrip">#FFFFFF</color>
+    <color name="tabTextColor">#FFFFFF</color>
 
     <!-- Toolbar -->
     <color name="cursorAccent">#FFFFFF</color>
     <color name="controlNormal">#FFFFFF</color>
     <color name="controlActivated">#FFFFFF</color>
-    <color name="color_fab">#9C27B0</color>
+    <color name="colorFab">#9C27B0</color>
 </resources>

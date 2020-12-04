@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="record">Itala</string>
+    <string name="saved_recordings">Nai-save na Mga Pag-record</string>
+    <string name="toast_recording_start">Nagsimula ang pagre-record</string>
+    <string name="toast_recording_finish">Ang pagrekord ay nai-save sa</string>
+    <string name="notification_recording">Nagre-record ...</string>
+    <string name="dialog_title_delete">Kumpirmahin ang Tanggalin ...</string>
+    <string name="dialog_text_delete">Sigurado ka bang nais mong tanggalin ang file na ito?</string>
+    <string name="dialog_title_rename">Palitan ANG pangalan ng file</string>
+    <string name="overflow_file_share">Magbahagi</string>
+    <string name="overflow_file_rename">Palitan ang pangalan</string>
+    <string name="overflow_file_delete">Tanggalin</string>
+    <string name="dialog_action_cancel">Kanselahin</string>
+    <string name="dialog_action_ok">OK lang</string>
+    <string name="dialog_action_yes">Oo</string>
+    <string name="dialog_action_no">Hindi</string>
+    <string name="no_saved_recordings_message">Walang nai-save na mga recording</string>
+    <string name="pause_recording_button">I-pause</string>
+    <string name="resume_recording_button">Ipagpatuloy</string>
+    <string name="default_file_name">Ang Aking Pagrekord</string>
+    <string name="record_prompt">Tapikin ang pindutan upang simulang magrekord</string>
+    <string name="record_in_progress">Nagre-record</string>
+    <string name="send_to">Ipadala sa</string>
+    <string name="overflow_file_play">Maglaro</string>
+</resources>

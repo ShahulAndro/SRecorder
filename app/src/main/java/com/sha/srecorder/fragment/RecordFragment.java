@@ -5,7 +5,6 @@ import android.content.pm.PackageManager;
 import android.media.MediaRecorder;
 import android.os.Bundle;
 import android.os.SystemClock;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -80,7 +79,7 @@ public class RecordFragment extends Fragment {
         View recordView = inflater.inflate(R.layout.fragment_record, container, false);
 
         mChronometer = recordView.findViewById(R.id.chronometer);
-        mRecordingPrompt = recordView.findViewById(R.id.recording_status_text);
+        mRecordingPrompt = recordView.findViewById(R.id.txtRecordingStatus);
         mRecordButton = recordView.findViewById(R.id.btnRecord);
         mPauseButton = recordView.findViewById(R.id.btnPause);
         mProgressBar = recordView.findViewById(R.id.progressBar);
@@ -124,8 +123,6 @@ public class RecordFragment extends Fragment {
     private void initRecording() {
         String uuid = UUID.randomUUID().toString();
         this.mFileName = getContext().getFilesDir().getPath() + "/" + uuid + ".mp4";
-        Log.i(RecordFragment.class.getSimpleName(), mFileName);
-
         this.mediaRecorder = new MediaRecorder();
     }
 

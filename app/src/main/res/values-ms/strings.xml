@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SRecorder</string>
+    <string name="record">Rekodkan</string>
+    <string name="saved_recordings">Rakaman yang Disimpan</string>
+    <string name="toast_recording_start">Rakaman dimulakan</string>
+    <string name="toast_recording_finish">Rakaman disimpan ke</string>
+    <string name="notification_recording">Merakam ...</string>
+    <string name="dialog_title_delete">Sahkan Padam ...</string>
+    <string name="dialog_text_delete">Adakah anda pasti mahu memadamkan fail ini?</string>
+    <string name="dialog_title_rename">Namakan semula Fail</string>
+    <string name="overflow_file_share">Berkongsi</string>
+    <string name="overflow_file_rename">Namakan semula</string>
+    <string name="overflow_file_delete">Padam</string>
+    <string name="dialog_action_cancel">Batal</string>
+    <string name="dialog_action_ok">okey</string>
+    <string name="dialog_action_yes">Ya</string>
+    <string name="dialog_action_no">Tidak</string>
+    <string name="no_saved_recordings_message">Tiada rakaman yang disimpan</string>
+    <string name="pause_recording_button">Jeda sebentar</string>
+    <string name="resume_recording_button">Sambung semula</string>
+    <string name="default_file_name">Rakaman Saya</string>
+    <string name="record_prompt">Ketik butang untuk memulakan rakaman</string>
+    <string name="record_in_progress">Rakaman</string>
+    <string name="send_to">Hantar kepada</string>
+    <string name="overflow_file_play">Main</string>
+</resources>

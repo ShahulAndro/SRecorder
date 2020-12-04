@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SRecorder</string>
+    <string name="record">Disco</string>
+    <string name="saved_recordings">Registrazioni salvate</string>
+    <string name="toast_recording_start">La registrazione è iniziata</string>
+    <string name="toast_recording_finish">Registrazione salvata in</string>
+    <string name="notification_recording">Registrazione...</string>
+    <string name="dialog_title_delete">Conferma cancellazione...</string>
+    <string name="dialog_text_delete">Sei sicuro di voler eliminare questo file?</string>
+    <string name="dialog_title_rename">Rinomina il file</string>
+    <string name="overflow_file_share">Condividere</string>
+    <string name="overflow_file_rename">Rinominare</string>
+    <string name="overflow_file_delete">Elimina</string>
+    <string name="dialog_action_cancel">Annulla</string>
+    <string name="dialog_action_ok">ok</string>
+    <string name="dialog_action_yes">sì</string>
+    <string name="dialog_action_no">No</string>
+    <string name="no_saved_recordings_message">Nessuna registrazione salvata</string>
+    <string name="pause_recording_button">Pausa</string>
+    <string name="resume_recording_button">Curriculum vitae</string>
+    <string name="default_file_name">La mia registrazione</string>
+    <string name="record_prompt">Tocca il pulsante per avviare la registrazione</string>
+    <string name="record_in_progress">Registrazione</string>
+    <string name="send_to">Inviare a</string>
+    <string name="overflow_file_play">Giocare</string>
+</resources>

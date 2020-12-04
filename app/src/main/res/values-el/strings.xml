@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SRecorder</string>
+    <string name="record">Ρεκόρ</string>
+    <string name="saved_recordings">Αποθηκευμένες ηχογραφήσεις</string>
+    <string name="toast_recording_start">Η εγγραφή ξεκίνησε</string>
+    <string name="toast_recording_finish">Η εγγραφή αποθηκεύτηκε σε</string>
+    <string name="notification_recording">Εγγραφή...</string>
+    <string name="dialog_title_delete">Επιβεβαίωση διαγραφής ...</string>
+    <string name="dialog_text_delete">Είστε βέβαιοι ότι θέλετε να διαγράψετε αυτό το αρχείο;</string>
+    <string name="dialog_title_rename">Μετονόμασε το αρχείο</string>
+    <string name="overflow_file_share">Μερίδιο</string>
+    <string name="overflow_file_rename">Μετονομάζω</string>
+    <string name="overflow_file_delete">Διαγράφω</string>
+    <string name="dialog_action_cancel">Ματαίωση</string>
+    <string name="dialog_action_ok">Εντάξει</string>
+    <string name="dialog_action_yes">Ναί</string>
+    <string name="dialog_action_no">Οχι</string>
+    <string name="no_saved_recordings_message">Δεν υπάρχουν αποθηκευμένες ηχογραφήσεις</string>
+    <string name="pause_recording_button">Παύση</string>
+    <string name="resume_recording_button">ΒΙΟΓΡΑΦΙΚΟ</string>
+    <string name="default_file_name">Η εγγραφή μου</string>
+    <string name="record_prompt">Πατήστε το κουμπί για να ξεκινήσει η εγγραφή</string>
+    <string name="record_in_progress">Εγγραφή</string>
+    <string name="send_to">Στέλνω σε</string>
+    <string name="overflow_file_play">Παίζω</string>
+</resources>

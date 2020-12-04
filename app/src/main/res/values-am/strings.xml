@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SRecorder</string>
+    <string name="record">መዝገብ</string>
+    <string name="saved_recordings">የተቀመጡ ቀረጻዎች</string>
+    <string name="toast_recording_start">መቅዳት ተጀምሯል</string>
+    <string name="toast_recording_finish">ቀረጻ ተቀምጧል ወደ</string>
+    <string name="notification_recording">በመቅዳት ላይ ...</string>
+    <string name="dialog_title_delete">መሰረዝን ያረጋግጡ ...</string>
+    <string name="dialog_text_delete">እርግጠኛ ነዎት ይህን ፋይል መሰረዝ ይፈልጋሉ?</string>
+    <string name="dialog_title_rename">ፋይልን እንደገና ይሰይሙ</string>
+    <string name="overflow_file_share">.ር ያድርጉ</string>
+    <string name="overflow_file_rename">ዳግም ሰይም</string>
+    <string name="overflow_file_delete">ሰርዝ</string>
+    <string name="dialog_action_cancel">ሰርዝ</string>
+    <string name="dialog_action_ok">እሺ</string>
+    <string name="dialog_action_yes">አዎ</string>
+    <string name="dialog_action_no">አይ</string>
+    <string name="no_saved_recordings_message">የተቀመጡ ቀረጻዎች የሉም</string>
+    <string name="pause_recording_button">ለአፍታ አቁም</string>
+    <string name="resume_recording_button">የራስ መግለጫ</string>
+    <string name="default_file_name">የእኔ ቀረፃ</string>
+    <string name="record_prompt">መቅዳት ለመጀመር ቁልፉን መታ ያድርጉ</string>
+    <string name="record_in_progress">መቅዳት</string>
+    <string name="send_to">ላክ ወደ</string>
+    <string name="overflow_file_play">ይጫወቱ</string>
+</resources>

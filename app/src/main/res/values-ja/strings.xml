@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SRecorder</string>
+    <string name="record">記録</string>
+    <string name="saved_recordings">保存された録音</string>
+    <string name="toast_recording_start">録音開始</string>
+    <string name="toast_recording_finish">保存された録音</string>
+    <string name="notification_recording">録音...</string>
+    <string name="dialog_title_delete">削除の確認...</string>
+    <string name="dialog_text_delete">このファイルを削除してもよろしいですか？</string>
+    <string name="dialog_title_rename">ファイル名を変更する</string>
+    <string name="overflow_file_share">シェア</string>
+    <string name="overflow_file_rename">名前を変更する</string>
+    <string name="overflow_file_delete">削除</string>
+    <string name="dialog_action_cancel">キャンセル</string>
+    <string name="dialog_action_ok">OK</string>
+    <string name="dialog_action_yes">はい</string>
+    <string name="dialog_action_no">番号</string>
+    <string name="no_saved_recordings_message">保存された録音はありません</string>
+    <string name="pause_recording_button">一時停止</string>
+    <string name="resume_recording_button">履歴書</string>
+    <string name="default_file_name">私の録音</string>
+    <string name="record_prompt">ボタンをタップして録音を開始します</string>
+    <string name="record_in_progress">録音</string>
+    <string name="send_to">に送る</string>
+    <string name="overflow_file_play">演奏する</string>
+</resources>

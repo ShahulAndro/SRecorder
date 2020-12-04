@@ -6,7 +6,7 @@
     <androidx.cardview.widget.CardView
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:card_view="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/mediaplayer_view"
+        android:id="@+id/playback_main_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -26,13 +26,12 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/file_name_text_view"
+                android:id="@+id/txtFileName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="7dp"
                 android:layout_marginBottom="7dp"
-                android:text="file_name.mp4"
                 android:textSize="18sp"
                 android:fontFamily="sans-serif-condensed"/>
 
@@ -46,7 +45,7 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:id="@+id/current_progress_text_view"
+                    android:id="@+id/txtCurrentProgress"
                     android:text="00:00"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -56,7 +55,7 @@
                     android:layout_alignParentStart="true" />
 
                 <ImageView
-                    android:id="@+id/fab_play"
+                    android:id="@+id/playBackControl"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:src="@drawable/ic_circle_play_light_blue"
@@ -66,7 +65,7 @@
 
 
                 <TextView
-                    android:id="@+id/file_length_text_view"
+                    android:id="@+id/txtFileLength"
                     android:text="00:00"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

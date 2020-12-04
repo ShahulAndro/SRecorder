@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SRecorder</string>
+    <string name="record">റെക്കോർഡ്</string>
+    <string name="saved_recordings">റെക്കോർഡിംഗുകൾ സംരക്ഷിച്ചു</string>
+    <string name="toast_recording_start">റെക്കോർഡിംഗ് ആരംഭിച്ചു</string>
+    <string name="toast_recording_finish">റെക്കോർഡിംഗ് ഇതിലേക്ക് സംരക്ഷിച്ചു</string>
+    <string name="notification_recording">റെക്കോർഡിംഗ് ...</string>
+    <string name="dialog_title_delete">ഇല്ലാതാക്കുക സ്ഥിരീകരിക്കുക ...</string>
+    <string name="dialog_text_delete">ഈ ഫയൽ ഇല്ലാതാക്കാൻ നിങ്ങൾ ആഗ്രഹിക്കുന്നുണ്ടോ?</string>
+    <string name="dialog_title_rename">ഫയലിന്റെ പേരുമാറ്റുക</string>
+    <string name="overflow_file_share">പങ്കിടുക</string>
+    <string name="overflow_file_rename">പേരുമാറ്റുക</string>
+    <string name="overflow_file_delete">ഇല്ലാതാക്കുക</string>
+    <string name="dialog_action_cancel">റദ്ദാക്കുക</string>
+    <string name="dialog_action_ok">ശരി</string>
+    <string name="dialog_action_yes">അതെ</string>
+    <string name="dialog_action_no">ഇല്ല</string>
+    <string name="no_saved_recordings_message">സംരക്ഷിച്ച റെക്കോർഡിംഗുകളൊന്നുമില്ല</string>
+    <string name="pause_recording_button">താൽക്കാലികമായി നിർത്തുക</string>
+    <string name="resume_recording_button">പുനരാരംഭിക്കുക</string>
+    <string name="default_file_name">എന്റെ റെക്കോർഡിംഗ്</string>
+    <string name="record_prompt">റെക്കോർഡിംഗ് ആരംഭിക്കാൻ ബട്ടൺ ടാപ്പുചെയ്യുക</string>
+    <string name="record_in_progress">റെക്കോർഡിംഗ്</string>
+    <string name="send_to">അയക്കുക</string>
+    <string name="overflow_file_play">പ്ലേ ചെയ്യുക</string>
+</resources>

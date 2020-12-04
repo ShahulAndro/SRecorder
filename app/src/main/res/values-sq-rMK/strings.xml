@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SRecorder</string>
+    <string name="record">Rekord</string>
+    <string name="saved_recordings">Regjistrimet e ruajtura</string>
+    <string name="toast_recording_start">Regjistrimi filloi</string>
+    <string name="toast_recording_finish">Regjistrimi u ruajt në</string>
+    <string name="notification_recording">Regjistrimi ...</string>
+    <string name="dialog_title_delete">Konfirmo Fshirjen ...</string>
+    <string name="dialog_text_delete">Je i sigurt që dëshiron ta fshish këtë skedar?</string>
+    <string name="dialog_title_rename">Riemërtoni Skedarin</string>
+    <string name="overflow_file_share">Ndani</string>
+    <string name="overflow_file_rename">Riemërto</string>
+    <string name="overflow_file_delete">Fshij</string>
+    <string name="dialog_action_cancel">Anulo</string>
+    <string name="dialog_action_ok">Ne rregull</string>
+    <string name="dialog_action_yes">po</string>
+    <string name="dialog_action_no">Jo</string>
+    <string name="no_saved_recordings_message">Asnjë regjistrim i ruajtur</string>
+    <string name="pause_recording_button">Bëni pauzë</string>
+    <string name="resume_recording_button">Vazhdoj</string>
+    <string name="default_file_name">Regjistrimi im</string>
+    <string name="record_prompt">Trokitni butonin për të filluar regjistrimin</string>
+    <string name="record_in_progress">Regjistrimi</string>
+    <string name="send_to">Dërgoni te</string>
+    <string name="overflow_file_play">Luaj</string>
+</resources>

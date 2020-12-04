@@ -43,28 +43,25 @@
             android:layout_marginLeft="8dp">
 
             <TextView
-                android:id="@+id/file_name_text"
+                android:id="@+id/txtFileName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="file_name"
                 android:textSize="15sp"
                 android:textStyle="bold"
                 android:singleLine="false"/>
 
             <TextView
-                android:id="@+id/file_length_text"
+                android:id="@+id/txtFileLength"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="00:00"
                 android:textSize="12sp"
                 android:fontFamily="sans-serif-condensed"
                 android:layout_marginTop="7dp"/>
 
             <TextView
-                android:id="@+id/file_date_added_text"
+                android:id="@+id/txtFileDateAdded"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="mmm dd yyyy - hh:mm a"
                 android:textSize="12sp"
                 android:fontFamily="sans-serif-condensed"/>
         </LinearLayout>

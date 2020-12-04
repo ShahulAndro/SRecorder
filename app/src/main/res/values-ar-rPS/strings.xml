@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SRecorder</string>
+    <string name="record">سجل</string>
+    <string name="saved_recordings">التسجيلات المحفوظة</string>
+    <string name="toast_recording_start">بدأ التسجيل</string>
+    <string name="toast_recording_finish">تم حفظ التسجيل في</string>
+    <string name="notification_recording">تسجيل...</string>
+    <string name="dialog_title_delete">تأكيد الحذف ...</string>
+    <string name="dialog_text_delete">هل أنت متأكد أنك تريد حذف هذا الملف؟</string>
+    <string name="dialog_title_rename">إعادة تسمية الملف</string>
+    <string name="overflow_file_share">شارك</string>
+    <string name="overflow_file_rename">إعادة تسمية</string>
+    <string name="overflow_file_delete">حذف</string>
+    <string name="dialog_action_cancel">إلغاء</string>
+    <string name="dialog_action_ok">حسنا</string>
+    <string name="dialog_action_yes">نعم</string>
+    <string name="dialog_action_no">لا</string>
+    <string name="no_saved_recordings_message">لا تسجيلات محفوظة</string>
+    <string name="pause_recording_button">وقفة</string>
+    <string name="resume_recording_button">استئنف</string>
+    <string name="default_file_name">التسجيل الخاص بي</string>
+    <string name="record_prompt">اضغط على الزر لبدء التسجيل</string>
+    <string name="record_in_progress">تسجيل</string>
+    <string name="send_to">ارسل إلى</string>
+</resources>

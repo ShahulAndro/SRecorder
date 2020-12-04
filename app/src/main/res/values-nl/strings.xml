@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SRecorder</string>
+    <string name="record">Vermelding</string>
+    <string name="saved_recordings">Opgeslagen opnames</string>
+    <string name="toast_recording_start">De opname is gestart</string>
+    <string name="toast_recording_finish">Opname opgeslagen in</string>
+    <string name="notification_recording">Opnemen ...</string>
+    <string name="dialog_title_delete">Bevestig verwijderen...</string>
+    <string name="dialog_text_delete">Weet u zeker dat u dit bestand wilt verwijderen?</string>
+    <string name="dialog_title_rename">Hernoem bestand</string>
+    <string name="overflow_file_share">Delen</string>
+    <string name="overflow_file_rename">Hernoemen</string>
+    <string name="overflow_file_delete">Verwijderen</string>
+    <string name="dialog_action_cancel">annuleren</string>
+    <string name="dialog_action_ok">OK</string>
+    <string name="dialog_action_yes">Ja</string>
+    <string name="dialog_action_no">Nee</string>
+    <string name="no_saved_recordings_message">Geen opgeslagen opnames</string>
+    <string name="pause_recording_button">Pauze</string>
+    <string name="resume_recording_button">Hervat</string>
+    <string name="default_file_name">Mijn opname</string>
+    <string name="record_prompt">Tik op de knop om de opname te starten</string>
+    <string name="record_in_progress">Opnemen</string>
+    <string name="send_to">Verzenden naar</string>
+    <string name="overflow_file_play">Speel</string>
+</resources>

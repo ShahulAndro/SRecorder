@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SRecorder</string>
+    <string name="record">विक्रम</string>
+    <string name="saved_recordings">जतन रेकॉर्डिंग</string>
+    <string name="toast_recording_start">रेकॉर्डिंग सुरू झाले</string>
+    <string name="toast_recording_finish">यावर रेकॉर्डिंग जतन केले</string>
+    <string name="notification_recording">मुद्रित करणे...</string>
+    <string name="dialog_title_delete">हटविण्याची पुष्टी करा ...</string>
+    <string name="dialog_text_delete">आपली खात्री आहे की आपण ही फाईल हटवू इच्छिता?</string>
+    <string name="dialog_title_rename">फाईलचे नाव बदला</string>
+    <string name="overflow_file_share">सामायिक करा</string>
+    <string name="overflow_file_rename">नाव बदला</string>
+    <string name="overflow_file_delete">हटवा</string>
+    <string name="dialog_action_cancel">रद्द करा</string>
+    <string name="dialog_action_ok">ठीक आहे</string>
+    <string name="dialog_action_yes">होय</string>
+    <string name="dialog_action_no">नाही</string>
+    <string name="no_saved_recordings_message">जतन केलेली रेकॉर्डिंग नाही</string>
+    <string name="pause_recording_button">विराम द्या</string>
+    <string name="resume_recording_button">पुन्हा सुरू करा</string>
+    <string name="default_file_name">माझे रेकॉर्डिंग</string>
+    <string name="record_prompt">रेकॉर्डिंग प्रारंभ करण्यासाठी बटणावर टॅप करा</string>
+    <string name="record_in_progress">मुद्रित करणे</string>
+    <string name="send_to">पाठवा</string>
+    <string name="overflow_file_play">खेळा</string>
+</resources>
