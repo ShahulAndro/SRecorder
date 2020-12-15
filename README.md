@@ -6,7 +6,7 @@
 #### Features:
 - Record audio
 - Saved the recordings
-- Playback recorded item
+- Playback recorded items
 - Rename, delete the saved file
 - Replay the recored item
 
