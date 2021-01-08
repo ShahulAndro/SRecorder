@@ -10,6 +10,8 @@
 - Rename, delete the saved file
 - Replay the recored item
 
+![](gif/recorder_demo.gif)
+
 License
 -------
 
