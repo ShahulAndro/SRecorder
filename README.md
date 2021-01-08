@@ -10,7 +10,7 @@
 - Rename, delete the saved file
 - Replay the recored item
 
-![](gif/recorder_demo.gif | width=200)
+![](gif/recorder_demo.gif =200X400)
 
 License
 -------
